@@ -1,0 +1,36 @@
+<div class="row  border rounded m-3 p-3">
+
+    {% include "include/about_answer_author_and_rating.html" %}
+
+    <div class="col-9">
+
+        <div>
+            {{ answer.text }}
+        </div>
+
+        <div class="form-check">
+            {% if not question.author.user == request.user %} <!-- If user is not question creator... -->
+                {% if answer.correct == True %}
+                    <input class="js-correct form-check-input" type="checkbox" id="correct{{ answer.id }}"
+                           data-id="{{ answer.id }}" data-qid="{{ item.id }}" checked disabled>
+                {% else %}
+                    <input class="js-correct form-check-input" type="checkbox" id="correct{{ answer.id }}"
+                           data-id="{{ answer.id }}" data-qid="{{ item.id }}" disabled>
+                {% endif %}
+            {% else %}
+                {% if answer.correct == True %}
+                    <input class="js-correct form-check-input" type="checkbox" id="correct{{ answer.id }}"
+                           data-id="{{ answer.id }}" data-qid="{{ item.id }}" checked>
+                {% else %}
+                    <input class="js-correct form-check-input" type="checkbox" id="correct{{ answer.id }}"
+                           data-id="{{ answer.id }}" data-qid="{{ item.id }}">
+                {% endif %}
+            {% endif %}
+            <label class="form-check-label">
+                Correct
+            </label>
+        </div>
+
+    </div>
+
+</div>

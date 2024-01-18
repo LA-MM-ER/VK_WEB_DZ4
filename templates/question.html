@@ -1,0 +1,29 @@
+{% extends 'layouts/header_and_tags.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<div class="row border rounded p-3">
+    {% include "include/about_question_author_and_rating_buttons.html" %}
+    {% include "include/question_for_page.html" %}
+</div>
+
+{% for answer in content %}
+        {% include "include/answer.html" %}
+{% endfor %}
+
+{% if request.user.is_authenticated %}
+    <form class="form" method="POST" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% buttons %}
+            <button class="btn btn-outline-info lowButton" type="submit">Answer</button>
+        {% endbuttons %}
+    </form>
+{% else %}
+    <br><h4>To write answer you must be authorised! <a href="/login/">Login</a></h4>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layouts/header_and_tags.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+<h3>Profile Settings</h3>
+<form class="form mt-5" method="POST" novalidate enctype="multipart/form-data">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button class="btn btn-outline-info" type="submit">Save</button>
+    {% endbuttons %}
+</form>
+
+{% endblock %}

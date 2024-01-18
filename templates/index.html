@@ -1,0 +1,15 @@
+{% extends 'layouts/header_and_tags.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="d-flex">
+    <h2>New Questions</h2>
+    <a href="#" class="ms-4 mt-2 text-danger">Hot Questions</a>
+</div><br>
+
+{% for item in questions %}
+    {% include "include/question_item.html" %}
+{% endfor %}
+
+{% endblock %}

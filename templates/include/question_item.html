@@ -1,0 +1,16 @@
+{% load static %}
+
+<div class="row border rounded p-3 m-3">
+    {% include "include/about_question_author_and_rating_buttons.html" %}
+    <div class="col-10">
+
+        <a href="/question/{{ item.id }}"><h2>{{ item.title }}</h2></a>
+
+        <div>
+            {{ item.text }}
+        </div>
+
+        {% include "include/question_tags.html" %}
+
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{% load static %}
+
+<div class="col-2">
+
+    <div class="questionImg" align="center">
+        <img src="{{ item.author.avatar.url }}" class="img-fluid ProfileImg ms-3">
+    </div>
+
+    <div class="like">
+        <div id="question{{ question.id }}">Quretion rating: {{ item.rating }}</div>
+        <button type="button" id="like" class="js-vote btn btn-outline-info" data-model="question" data-action="like"
+                data-id="{{ item.id }}">Like
+        </button>
+        <button type="button" id="dislike" class="js-vote btn btn-outline-danger" data-model="question" data-action="dislike"
+                data-id="{{ item.id }}">Dislike
+        </button>
+    </div>
+
+</div>

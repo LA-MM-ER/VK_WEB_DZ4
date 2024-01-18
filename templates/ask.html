@@ -1,0 +1,16 @@
+{% extends 'layouts/header_and_tags.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h3>New Question</h3>
+
+<form method="POST" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        {% buttons %}
+        <button class="btn btn-outline-info lowButton" type="submit">Ask</button>
+    {% endbuttons %}
+    </form>
+{% endblock %}

@@ -1,0 +1,10 @@
+<div class="">
+
+    <a href="/question/{{ item.id }}"><span>answer({{ item.answers.count }})</span></a>
+    <span>Tags:</span>
+
+    {% for tag in item.tags.all %}
+        <a href="#"><span>{{ tag.name }}</span></a>
+    {% endfor %}
+
+</div>

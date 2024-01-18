@@ -1,0 +1,17 @@
+{% extends 'layouts/header_and_tags.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+{% block content %}
+<h3>Login</h3>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% buttons %}
+        <button class="btn btn-outline-info lowButton" type="submit">Login</button>
+    {% endbuttons %}
+</form>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="{% static 'bootstrap5/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+
+<nav class="p-3 bg-light text-white navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+      <a class="navbar-brand" href="/"><img src="{% static 'img/логотип.jpg' %}" alt="Логотип" width=200></a>
+      <div class="inline">
+          <form class="d-inline-flex">
+              <input class="form-control me-2 bg-light text-dark" type="search" placeholder="Поиск" aria-label="Search">
+          </form>
+          <a href="/ask/" type="button" class="btn btn-outline-success my-2 my-sm-0">Ask</a>
+      </div>
+
+    <div class="text-end">
+            {% if user.is_authorised %}
+            {% include 'layouts/authorised_user_block.html' %}
+            {% else %}
+            {% include 'layouts/not_authorised_user_block.html' %}
+            {% endif %}
+    </div>
+    </div>
+  </div>
+</nav>
+
+<br>
+<div class="row m-4">
+    <div class="col-md-8 p-4 bg-white ">
+        {% block content %}
+        <b>Something went wrong, and we can't to view content block</b>
+        {% endblock %}
+    </div>
+    <div class="col-md-4">
+        {% include 'layouts/tags_block.html' %}
+    </div>
+</div>
+
+</body>
+</html>

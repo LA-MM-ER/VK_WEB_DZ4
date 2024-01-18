@@ -1,0 +1,23 @@
+.ProfileImg {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 1.75rem;
+}
+
+.SettingsProfileImg {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 1.75rem;
+}
+
+textarea {
+    width: 100%;
+}
+
+.align-center {
+    text-align: center;
+}
+
+textarea {
+    min-height: 30%;
+}

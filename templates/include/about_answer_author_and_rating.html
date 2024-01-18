@@ -1,0 +1,17 @@
+<div class="col-3">
+
+        <img src="{{ answer.author.avatar.url }}" class="img-fluid ProfileImg ms-3">
+
+    <div class="like">
+        <div id="answer{{ answer.id }}">{{ answer.rating }}</div>
+        <button type="button" class="btn btn-primary js-vote" id="like" data-model="answer" data-action="like"
+                data-id="{{ answer.id }}">
+            Like
+        </button>
+        <button type="button" class="btn btn-danger js-vote" id="dislike" data-model="answer" data-action="dislike"
+                data-id="{{ answer.id }}">
+            Dislike
+        </button>
+    </div>
+
+</div>
